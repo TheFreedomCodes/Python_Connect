@@ -1,0 +1,12 @@
+navbar alignment
+Improve profile page
+Improve the homepage
+Improve the after login page
+Give proper layout to every page and enhance the styling of the pages
+Give routing to aboutus page
+give routing to contactus page
+login button not working
+know more button not working
+search option not working
+Donate(payment option) not working
+Add ngos to the website
