@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="filter-form">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ name_query }}">
+    <label for="location">Location:</label>
+    <input type="text" name="location" value="{{ location_query }}">
+    <button type="submit">Filter</button>
+</form>
+
+<ul class="ngo-list">
+    {% for ngo in ngos %}
+    <li>
+        <h2>{{ ngo.name }}</h2>
+        <p>{{ ngo.location }}</p>
+    </li>
+    {% empty %}
+    <li>No NGOs found.</li>
+    {% endfor %}
+</ul>
+
+  <div class="container">
+    <h1>NGO List</h1>
+    <form class="form-inline mb-4">
+      <label for="name" class="mr-2">Name:</label>
+      <input type="text" name="name" id="name" value="{{ name_query }}" class="form-control mr-2">
+      <label for="location" class="mr-2">Location:</label>
+      <input type="text" name="location" id="location" value="{{ location_query }}" class="form-control mr-2">
+      <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+    <ul class="list-group">
+      {% for ngo in ngos %}
+        <li class="list-group-item">
+          <h2>{{ ngo.name }}</h2>
+          <p>{{ ngo.location }}</p>
+        </li>
+      {% empty %}
+        <li class="list-group-item">No NGOs found.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

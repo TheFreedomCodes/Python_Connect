@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logout Page</title>
+	<style>
+		body {
+			background-color: #f0f0f0;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		
+		h1 {
+			color: #333;
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		
+		p {
+			margin-bottom: 20px;
+		}
+		
+		a {
+			color: #fff;
+			background-color: #333;
+			padding: 10px 20px;
+			border-radius: 5px;
+			text-decoration: none;
+		}
+		
+		a:hover {
+			background-color: #666;
+		}
+	</style>
+</head>
+<body>
+	<h1>You are still logged in,</h1>
+    <a href="{% url 'home' %}">click here to log out</a>
+	<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue nisi sed leo malesuada, vel fermentum quam efficitur. Nunc elementum, sapien ut faucibus luctus, neque odio blandit arcu, in vestibulum sapien sapien sed nibh.</p>-->
+</body>
+</html>

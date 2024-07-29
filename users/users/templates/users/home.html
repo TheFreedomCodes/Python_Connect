@@ -1,0 +1,88 @@
+{% extends "users/base.html" %}
+
+{% block title %} Home Page {% endblock title%}
+
+{% block content %}
+    
+    <style>
+  body {
+    background-color: #111827;
+  }
+  .jumbotron{
+    color: #000000;
+    padding: 20px;
+
+
+  }
+  .navbar navbar-expand-md navbar-light{
+    background-color: #ADD8E6;
+    
+    padding: 20px;
+  }
+</style>
+<nav class="navbar navbar-expand-md navbar-light " style="top:-55px">
+        
+        <!--<div class="mx-auto d-flex align-items-center">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search For NGOs Here..." aria-label="Search" name="query">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+              </form>
+              
+              {% if query %}
+                <p>Search results for "{{ query }}":</p>
+                {% if results %}
+                    <ul>
+                        {% for result in results %}
+                            <li>{{ result.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found for "{{ query }}".</p>
+                {% endif %}
+              {% endif %}
+              
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"onclick="window.location.href='https://linktr.ee/SparklingwingsNGO'">Search</button>
+        </div>-->
+    
+    
+</nav><!--
+<script>
+    function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+-->
+<div class="jumbotron">
+    <h1 class="display-4">Welcome, {{user.first_name.title|default:'to Connect'}}</h1>
+    <p class="lead">
+        Hello, you 👋🏻
+        We're a group of 4 students who came together to bring this website specially curated for NGOs to you so you can find the NGO you like and learn about them or be able to happily lend a hand to them or maybe start your own NGO?🫣
+        We're gald you're here and hope you have a beautiful journey here on.
+    </p>
+    <hr class="my-4">
+    <p class="lead">
+        {% if user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{% url 'users-profile' %}" role="button">Profile</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'search' %}" role="button">Click Here to check out Ngos</a>
+        {% else %}
+            <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
+        {% endif %}
+    </p>
+</div>
+
+{% endblock content %}
